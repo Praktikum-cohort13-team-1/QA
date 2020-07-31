@@ -40,7 +40,8 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "core-js": "^3.6.5"
+    "core-js": "^3.6.5",
+    "he": "^1.2.0"
   },
   "husky": {
     "hooks": {
