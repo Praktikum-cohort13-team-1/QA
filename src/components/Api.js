@@ -43,12 +43,6 @@ class Api {
       return this._setToken();
     } else if (this._baseUrl === 'https://jservice.io/api') {
       //в jservice нет возможности работать по токенам
-      this._difficultyOptions = {
-        easy: 'easy',
-        medium: 'medium',
-        hard: 'hard',
-      };
-
       return Promise.resolve();
     } else {
       return Promise.reject(
