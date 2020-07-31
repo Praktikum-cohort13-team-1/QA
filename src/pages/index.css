@@ -1,3 +1,6 @@
+@import url(../vendor/normalize.css);
+@import url(../fonts/inter.css);
+
 .page {
   display: flex;
   flex-direction: column;
@@ -5,6 +8,9 @@
   min-height: 100vh;
   height: 100%;
   background-color: #000000;
+  background-image: url(https://images.unsplash.com/photo-1515462277126-2dd0c162007a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2135&q=80);
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: Inter, 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -70,7 +76,8 @@
 
 .screen__header {
   color: #000000;
-  margin: 30px auto 0;
+  margin: 30px auto 20px;
+  font-size: 32px;
 }
 
 .screen__button {
@@ -84,6 +91,7 @@
   margin: 20px auto 10px;
   padding: 15px 0 18.5px;
   width: 50%;
+  font-size: 20px;
 }
 
 .screen__game_process {
@@ -142,6 +150,23 @@
   width: 30px;
   height: 30px;
   margin-right: 4px;
+}
+
+.screen_game_over {
+  text-align: center;
+}
+.screen__text {
+  /* margin: 20px; */
+}
+.screen__final-time {
+  font-weight: 900;
+}
+.screen__final-counter {
+  font-weight: 900;
+}
+.screen__text_final_result {
+  font-weight: 900;
+  font-size: 26px;
 }
 
 .footer {

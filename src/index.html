@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <!--  <link rel="stylesheet"  href="pages/index.css">-->
     <title>QuizApp</title>
   </head>
+
   <body>
     <div class="page">
       <header class="header">
@@ -21,7 +21,7 @@
           </form>
         </section>
 
-        <section class="screen screen_game_process screen_opened">
+        <section class="screen screen_game_process">
           <form class="screen__form">
             <h2 class="screen__header">Экран Игры</h2>
             <p class="screen__question-number">Вопрос: 5 из 5</p>
@@ -47,29 +47,45 @@
               <img
                 class="screen__answer-icon"
                 src="./images/correct.svg"
-                alt=""
+                alt="#"
               />
               <img
                 class="screen__answer-icon"
                 src="./images/wrong.svg"
-                alt=""
+                alt="#"
               />
               <img
                 class="screen__answer-icon"
                 src="./images/correct.svg"
-                alt=""
+                alt="#"
               />
               <img
                 class="screen__answer-icon"
                 src="./images/wrong.svg"
-                alt=""
+                alt="#"
               />
               <img
                 class="screen__answer-icon"
                 src="./images/correct.svg"
-                alt=""
+                alt="#"
               />
             </div>
+          </form>
+        </section>
+
+        <section class="screen screen_game_over screen_opened">
+          <form class="screen__form">
+            <h2 class="screen__header">Финальный Экран</h2>
+            <p class="screen__text">
+              Общее время прохождения теста:
+              <span class="screen__final-time">05:25</span>
+            </p>
+            <p class="screen__text">
+              Количество правильных ответов:
+              <span class="screen__final-counter">3 из 5</span>
+            </p>
+            <p class="screen__text screen__text_final_result">Тест пройден!</p>
+            <button class="screen__button">Новый тест</button>
           </form>
         </section>
       </main>
