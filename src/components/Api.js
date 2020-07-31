@@ -84,7 +84,7 @@ class Api {
           ? `&difficulty=${this._difficultyOptions[difficulty]}`
           : '';
       return this._fetchApi(
-        `?amount=${amount}&token=${this._amount}${categoryOption}${difficultyOption}`
+        `?amount=${amount}&token=${amount}${categoryOption}${difficultyOption}`
       ).then((res) => {
         if (res.response_code === this._responseCodes.Success) {
           return res.results;
