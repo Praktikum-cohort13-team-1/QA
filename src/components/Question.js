@@ -85,21 +85,24 @@ class Question {
     this._questionForm.addEventListener('submit', this._submitCallback);
     answers.forEach((answer) => {
       answer.addEventListener('click', () => {
-        const answerIsCorrect = this._questions[
-          this._currentQuestionIndex
-        ].answers.some(
-          (elem) => elem.text === answer.textContent && elem.isCorrect
-        );
-        if (answerIsCorrect) {
-          answer.classList.add(this._correctAnswerClass);
-        } else {
-          answer.classList.add(this._incorrectAnswerClass);
-          correctAnswerElement.classList.add(this._correctAnswerClass);
-        }
-        this._nextButton.removeAttribute('disabled');
-        this._answerIcons.append(this._generateIcon(answerIsCorrect));
+        if (!this._questions[this._currentQuestionIndex].isAnswered) {
+          this._questions[this._currentQuestionIndex].isAnswered = true;
+          const answerIsCorrect = this._questions[
+            this._currentQuestionIndex
+          ].answers.some(
+            (elem) => elem.text === answer.textContent && elem.isCorrect
+          );
+          if (answerIsCorrect) {
+            answer.classList.add(this._correctAnswerClass);
+          } else {
+            answer.classList.add(this._incorrectAnswerClass);
+            correctAnswerElement.classList.add(this._correctAnswerClass);
+          }
+          this._nextButton.removeAttribute('disabled');
+          this._answerIcons.append(this._generateIcon(answerIsCorrect));
 
-        this._answerHandler(answerIsCorrect);
+          this._answerHandler(answerIsCorrect);
+        }
       });
     });
   }
