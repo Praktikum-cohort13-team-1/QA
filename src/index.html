@@ -13,9 +13,11 @@
       </header>
 
       <main class="main">
-        <section class="screen screen_game_start screen_opened">
+        <section class="screen screen_game_start">
           <form class="screen__form">
-            <h2 class="screen__header">Добро пожаловать!</h2>
+            <h2 class="screen__header">
+              Добро пожаловать в чудесный мир вопросов без ответов!
+            </h2>
             <p class="screen__text">Количество вопросов:</p>
             <input
               class="screen__input"
@@ -24,13 +26,21 @@
               placeholder="Бесконечность не предел"
               required
             />
+            <!-- <p class="screen__text">Сложность:</p>
+          <select class="screen__select" required>
+            <option class="screen__option">Легкая</option>
+            <option class="screen__option">Средняя</option>
+            <option class="screen__option">Тяжелая</option>
+          </select> -->
             <button class="screen__button">Начать игру</button>
           </form>
         </section>
 
-        <section class="screen screen_game_process">
+        <section class="screen screen_game_process screen_opened">
           <form class="screen__form">
-            <h2 class="screen__header">Экран Игры</h2>
+            <h2 class="screen__header">
+              Ответ существовал, но формулировке не поддавался.
+            </h2>
             <p class="screen__question-number">Вопрос: 5 из 5</p>
             <div class="screen__test">
               <p class="screen__question-text">
@@ -82,7 +92,7 @@
 
         <section class="screen screen_game_over">
           <form class="screen__form">
-            <h2 class="screen__header">Финальный Экран</h2>
+            <h2 class="screen__header">Отлично сыграно!</h2>
             <p class="screen__text">
               Общее время прохождения теста:
               <span class="screen__final-time">05:25</span>
