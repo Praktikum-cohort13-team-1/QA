@@ -14,66 +14,31 @@
 
       <main class="main">
         <section class="screen screen_game_start">
-          <form class="screen__form">
+          <div class="screen__form">
             <h2 class="screen__header">Начальный Экран</h2>
-            <button class="screen__button">Начать игру</button>
-            <button class="screen__button">Настройки</button>
-          </form>
+            <button class="screen__button screen__button_start-game">
+              Начать игру
+            </button>
+            <button class="screen__button screen__button_settings">
+              Настройки
+            </button>
+          </div>
         </section>
 
         <section class="screen screen_game_process">
-          <form class="screen__form">
+          <form class="screen__form screen__form_questions">
             <h2 class="screen__header">Экран Игры</h2>
-            <p class="screen__question-number">Вопрос: 5 из 5</p>
+            <p class="screen__question-number"></p>
             <div class="screen__test">
-              <p class="screen__question-text">
-                Как можно объявить переменную?
-              </p>
-              <button
-                class="screen__answer screen__answer_a screen__answer_correct"
-              >
-                let
-              </button>
-              <button
-                class="screen__answer screen__answer_b screen__answer_wrong"
-              >
-                var
-              </button>
-              <button class="screen__answer screen__answer_c">const</button>
-              <button class="screen__answer screen__answer_d">function</button>
-              <button class="screen__button">Далее</button>
+              <p class="screen__question-text"></p>
+              <div class="screen__answers"></div>
+              <button class="screen__button" type="submit">Далее</button>
             </div>
-            <div class="screen__answer-icons">
-              <img
-                class="screen__answer-icon"
-                src="./images/correct.svg"
-                alt="#"
-              />
-              <img
-                class="screen__answer-icon"
-                src="./images/wrong.svg"
-                alt="#"
-              />
-              <img
-                class="screen__answer-icon"
-                src="./images/correct.svg"
-                alt="#"
-              />
-              <img
-                class="screen__answer-icon"
-                src="./images/wrong.svg"
-                alt="#"
-              />
-              <img
-                class="screen__answer-icon"
-                src="./images/correct.svg"
-                alt="#"
-              />
-            </div>
+            <div class="screen__answer-icons"></div>
           </form>
         </section>
 
-        <section class="screen screen_game_over screen_opened">
+        <section class="screen screen_game_over">
           <form class="screen__form">
             <h2 class="screen__header">Финальный Экран</h2>
             <p class="screen__text">
@@ -82,7 +47,7 @@
             </p>
             <p class="screen__text">
               Количество правильных ответов:
-              <span class="screen__final-counter">3 из 5</span>
+              <span class="screen__final-counter"></span>
             </p>
             <p class="screen__text screen__text_final_result">Тест пройден!</p>
             <button class="screen__button">Новый тест</button>
@@ -91,5 +56,20 @@
       </main>
       <footer class="footer"></footer>
     </div>
+    <template id="answer-template">
+      <button class="screen__answer" type="button"></button>
+    </template>
+    <template id="asnwer-icons">
+      <img
+        class="screen__answer-icon screen__answer-icon_correct"
+        src="./images/correct.svg"
+        alt="#"
+      />
+      <img
+        class="screen__answer-icon screen__answer-icon_incorrect"
+        src="./images/wrong.svg"
+        alt="#"
+      />
+    </template>
   </body>
 </html>

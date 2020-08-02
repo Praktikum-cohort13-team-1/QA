@@ -1,5 +1,8 @@
+import he from 'he/he';
+
 class Api {
   constructor(config) {
+    this._getTokenHandler = config.getTokenHandler.bind(this);
     this._baseUrl = config.baseUrl;
     this._setupApi().catch((err) => {
       console.error(err);
@@ -25,7 +28,7 @@ class Api {
   }
 
   _setupApi() {
-    if (this._baseUrl === 'https://opentdb.com/api.php') {
+    if (this._baseUrl === 'https://opentdb.com/') {
       this._responseCodes = {
         Success: 0,
         NoResults: 1,
@@ -40,7 +43,9 @@ class Api {
         hard: 'hard',
       };
 
-      return this._setToken();
+      return this._setToken().then(() => {
+        this._getTokenHandler();
+      });
     } else if (this._baseUrl === 'https://jservice.io/api') {
       //в jservice нет возможности работать по токенам
       return Promise.resolve();
@@ -52,8 +57,8 @@ class Api {
   }
 
   _setToken() {
-    if (this._baseUrl === 'https://opentdb.com/api.php') {
-      return getSessionToken().then((res) => {
+    if (this._baseUrl === 'https://opentdb.com/') {
+      return this._getSessionToken().then((res) => {
         if (res.response_code === 0) {
           this._token = res.token;
         } else {
@@ -64,24 +69,40 @@ class Api {
   }
 
   _getSessionToken() {
-    return this._fetchApi('?command=request', 'GET');
+    return this._fetchApi('api_token.php?command=request', 'GET');
   }
 
   _resetSessionToken() {
-    return this._fetchApi(`?command=reset&token=${this._token}`, 'GET');
+    return this._fetchApi(
+      `api_token.php?command=reset&token=${this._token}`,
+      'GET'
+    );
   }
 
   getQuestions(amount, category, difficulty) {
-    if (this._baseUrl === 'https://opentdb.com/api.php') {
+    if (this._baseUrl === 'https://opentdb.com/') {
       const categoryOption = category ? `&category=${category}` : '',
         difficultyOption = difficulty
           ? `&difficulty=${this._difficultyOptions[difficulty]}`
           : '';
+
       return this._fetchApi(
-        `?amount=${amount}&token=${amount}${categoryOption}${difficultyOption}`
+        `api.php?amount=${amount}&token=${this._token}${categoryOption}${difficultyOption}`
       ).then((res) => {
         if (res.response_code === this._responseCodes.Success) {
-          return res.results;
+          return res.results.map((elem) => {
+            const questionObject = {};
+            questionObject.question = he.decode(elem.question);
+            questionObject.answers = elem.incorrect_answers
+              .map((answer) => {
+                return { text: he.decode(answer) };
+              })
+              .concat({
+                text: he.decode(elem.correct_answer),
+                isCorrect: true,
+              });
+            return questionObject;
+          });
         } else if (
           res.response_code === this._responseCodes.NoResults ||
           res.response_code === this._responseCodes.TokenNotFound ||
@@ -106,3 +127,5 @@ class Api {
     }
   }
 }
+
+export default Api;
