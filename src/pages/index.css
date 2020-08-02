@@ -122,6 +122,14 @@
 .screen__option {
 }
 
+.screen__button:hover {
+  opacity: 0.8;
+}
+
+.screen__button:disabled {
+  background-color: #666;
+}
+
 .screen__game_process {
 }
 
@@ -149,16 +157,13 @@
   cursor: pointer;
 }
 
-.screen__answer_a {
+.screen__answer:hover {
+  opacity: 0.8;
 }
 
-.screen__answer_b {
-}
-
-.screen__answer_c {
-}
-
-.screen__answer_d {
+.screen__answers {
+  display: flex;
+  flex-direction: column;
 }
 
 .screen__answer_correct {
