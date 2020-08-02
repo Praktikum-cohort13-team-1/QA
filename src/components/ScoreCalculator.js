@@ -13,11 +13,11 @@ export default class ScoreCalculator {
     }
 
     setTimer() {
-        this._starTime = new Date(Date.now());
+        this._starTime = new Date();
     }
 
     getTimeOfTest() {
-        this._endTime = new Date(Date.now());
+        this._endTime = new Date();
         this._totalTime = `${this._endTime.getHours() - this._starTime.getHours()}:${this._endTime.getMinutes() - this._starTime.getMinutes()}:${this._endTime.getSeconds() - this._starTime.getSeconds()}`;
         return this._totalTime;
     }
