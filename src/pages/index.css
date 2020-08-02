@@ -1,6 +1,5 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/inter.css);
-
 .page {
   display: flex;
   flex-direction: column;
@@ -78,6 +77,7 @@
   color: #000000;
   margin: 30px auto 20px;
   font-size: 32px;
+  text-align: center;
 }
 
 .screen__button {
@@ -92,6 +92,34 @@
   padding: 15px 0 18.5px;
   width: 50%;
   font-size: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.screen__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.screen__input {
+  margin: 0 auto;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 58.5%;
+  border-radius: 10px;
+  outline: none;
+}
+
+.screen__select {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 60%;
+  border-radius: 10px;
+  outline: none;
+}
+
+.screen__option {
 }
 
 .screen__button:hover {
@@ -160,15 +188,20 @@
 .screen_game_over {
   text-align: center;
 }
+
 .screen__text {
-  /* margin: 20px; */
+  margin: 0 auto 7px;
+  width: 60%;
 }
+
 .screen__final-time {
   font-weight: 900;
 }
+
 .screen__final-counter {
   font-weight: 900;
 }
+
 .screen__text_final_result {
   font-weight: 900;
   font-size: 26px;

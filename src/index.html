@@ -14,20 +14,33 @@
 
       <main class="main">
         <section class="screen screen_game_start">
-          <div class="screen__form">
-            <h2 class="screen__header">Начальный Экран</h2>
-            <button class="screen__button screen__button_start-game">
-              Начать игру
-            </button>
-            <button class="screen__button screen__button_settings">
-              Настройки
-            </button>
-          </div>
+          <form class="screen__form">
+            <h2 class="screen__header">
+              Добро пожаловать в чудесный мир вопросов без ответов!
+            </h2>
+            <p class="screen__text">Количество вопросов:</p>
+            <input
+              class="screen__input"
+              type="number"
+              min="1"
+              placeholder="Бесконечность не предел"
+              required
+            />
+            <!-- <p class="screen__text">Сложность:</p>
+          <select class="screen__select" required>
+            <option class="screen__option">Легкая</option>
+            <option class="screen__option">Средняя</option>
+            <option class="screen__option">Тяжелая</option>
+          </select> -->
+            <button class="screen__button screen__button_start-game">Начать игру</button>
+          </form>
         </section>
 
         <section class="screen screen_game_process">
           <form class="screen__form screen__form_questions">
-            <h2 class="screen__header">Экран Игры</h2>
+            <h2 class="screen__header">
+              Ответ существовал, но формулировке не поддавался
+            </h2>
             <p class="screen__question-number"></p>
             <div class="screen__test">
               <p class="screen__question-text"></p>
@@ -40,7 +53,7 @@
 
         <section class="screen screen_game_over">
           <form class="screen__form">
-            <h2 class="screen__header">Финальный Экран</h2>
+            <h2 class="screen__header">Отлично сыграно!</h2>
             <p class="screen__text">
               Общее время прохождения теста:
               <span class="screen__final-time">05:25</span>
