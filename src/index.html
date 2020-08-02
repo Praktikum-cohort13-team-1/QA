@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>QuizApp</title>
+  </head>
+
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__name">13 cohort Quiz App Team#1</h1>
+      </header>
+
+      <main class="main">
+        <section class="screen screen_game_start">
+          <div class="screen__form">
+            <h2 class="screen__header">Начальный Экран</h2>
+            <button class="screen__button screen__button_start-game">
+              Начать игру
+            </button>
+            <button class="screen__button screen__button_settings">
+              Настройки
+            </button>
+          </div>
+        </section>
+
+        <section class="screen screen_game_process">
+          <form class="screen__form screen__form_questions">
+            <h2 class="screen__header">Экран Игры</h2>
+            <p class="screen__question-number"></p>
+            <div class="screen__test">
+              <p class="screen__question-text"></p>
+              <div class="screen__answers"></div>
+              <button class="screen__button" type="submit">Далее</button>
+            </div>
+            <div class="screen__answer-icons"></div>
+          </form>
+        </section>
+
+        <section class="screen screen_game_over">
+          <form class="screen__form">
+            <h2 class="screen__header">Финальный Экран</h2>
+            <p class="screen__text">
+              Общее время прохождения теста:
+              <span class="screen__final-time">05:25</span>
+            </p>
+            <p class="screen__text">
+              Количество правильных ответов:
+              <span class="screen__final-counter"></span>
+            </p>
+            <p class="screen__text screen__text_final_result">Тест пройден!</p>
+            <button class="screen__button">Новый тест</button>
+          </form>
+        </section>
+      </main>
+      <footer class="footer"></footer>
+    </div>
+    <template id="answer-template">
+      <button class="screen__answer" type="button"></button>
+    </template>
+    <template id="asnwer-icons">
+      <img
+        class="screen__answer-icon screen__answer-icon_correct"
+        src="./images/correct.svg"
+        alt="#"
+      />
+      <img
+        class="screen__answer-icon screen__answer-icon_incorrect"
+        src="./images/wrong.svg"
+        alt="#"
+      />
+    </template>
+  </body>
+</html>
