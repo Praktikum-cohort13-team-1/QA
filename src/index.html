@@ -13,11 +13,18 @@
       </header>
 
       <main class="main">
-        <section class="screen screen_game_start">
+        <section class="screen screen_game_start screen_opened">
           <form class="screen__form">
-            <h2 class="screen__header">Начальный Экран</h2>
+            <h2 class="screen__header">Добро пожаловать!</h2>
+            <p class="screen__text">Количество вопросов:</p>
+            <input
+              class="screen__input"
+              type="number"
+              min="1"
+              placeholder="Бесконечность не предел"
+              required
+            />
             <button class="screen__button">Начать игру</button>
-            <button class="screen__button">Настройки</button>
           </form>
         </section>
 
@@ -73,7 +80,7 @@
           </form>
         </section>
 
-        <section class="screen screen_game_over screen_opened">
+        <section class="screen screen_game_over">
           <form class="screen__form">
             <h2 class="screen__header">Финальный Экран</h2>
             <p class="screen__text">

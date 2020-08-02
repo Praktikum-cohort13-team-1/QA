@@ -1,6 +1,5 @@
 @import url(../vendor/normalize.css);
 @import url(../fonts/inter.css);
-
 .page {
   display: flex;
   flex-direction: column;
@@ -92,24 +91,29 @@
   padding: 15px 0 18.5px;
   width: 50%;
   font-size: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.screen__input {
+  margin: 2px 0 5px;
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  width: 50%;
+  border-radius: 10px;
+}
 .screen__game_process {
 }
-
 .screen__question-number {
 }
-
 .screen__question-text {
 }
-
 .screen__test {
   display: flex;
   flex-direction: column;
   border-bottom: #000000 solid 1px;
   border-top: #000000 solid 1px;
 }
-
 .screen__answer {
   background-color: #c2c2c2;
   border-radius: 10px;
@@ -120,38 +124,29 @@
   outline: none;
   cursor: pointer;
 }
-
 .screen__answer_a {
 }
-
 .screen__answer_b {
 }
-
 .screen__answer_c {
 }
-
 .screen__answer_d {
 }
-
 .screen__answer_correct {
   background-color: #3bff00;
 }
-
 .screen__answer_wrong {
   background-color: #ff0000;
 }
-
 .screen__answer-icons {
   margin-top: 5px;
   display: flex;
 }
-
 .screen__answer-icon {
   width: 30px;
   height: 30px;
   margin-right: 4px;
 }
-
 .screen_game_over {
   text-align: center;
 }
@@ -168,7 +163,6 @@
   font-weight: 900;
   font-size: 26px;
 }
-
 .footer {
   flex: 0 0 auto;
 }
