@@ -18,12 +18,11 @@ export default class ScoreCalculator {
 
   getTimeOfTest() {
     this._endTime = new Date();
-    this._totalTime = `${
-      this._endTime.getHours() - this._starTime.getHours()
-    }:${this._endTime.getMinutes() - this._starTime.getMinutes()}:${
-      this._endTime.getSeconds() - this._starTime.getSeconds()
-    }`;
-    return this._totalTime;
+    this._totalTime = Math.trunc((this._endTime - this._starTime) / 1000);
+    this._totalHours = Math.trunc(this._totalTime / 3600);
+    this._totalMinutes = Math.trunc((this._totalTime % 3600) / 60);
+    this._totalSeconds = this._totalTime % 60;
+    return `${this._totalHours}:${this._totalMinutes}:${this._totalSeconds}`;
   }
 
   returnScore() {
